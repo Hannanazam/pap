@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to PAP Alumni</title>
+  <link rel="stylesheet" href="../asset/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+    .question_cards{
+        background-color: #f3f3f3;
+        padding: 50px 0px;
+    }
+
+    .question_cards .card_section_still .cards{
+      box-shadow: 0 0 15px 5px rgba(179, 176, 176, 0.2);
+    }
+    .question_cards .card_section_still .cards:hover{
+      box-shadow: 0 0 15px 5px rgba(80, 80, 80, 0.2);
+    }
+    .question_cards .card_section_still .cards .card_body p:nth-child(1){
+      font-size: 19px;
+    }
+    .question_cards .card_section_still .cards .card_body .btn{
+      font-size: 12px;
+      border-radius: 0px;
+      font-weight: 550;
+    }
+    .modal-body{
+      padding: 0px;
+    }
+    .question_cards .card_section_still .cards .card_body .modal-xl{
+      max-width: 900px;
+    }
+    .question_cards .card_section_still .cards .card_body .modal-dialog{
+      margin: 6.75rem auto !important;
+    }
+    .question_cards .card_section_still .cards .card_body p{
+      margin-bottom: 8px;
+    }
+    .question_cards .card_section_still .cards .card_body{
+      text-align: left;
+      margin-left: 20px;
+    }
+    /* .question_cards .cards:hover{
+      background: #c816310a; 
+      border: 1px solid #C81631;
+    } */
+    .question_cards .cards{
+        background-color: #fff;
+        text-align: center;
+        padding: 10px;
+      border: 1px solid #C81631;
+        border-radius: 5px;
+        margin: 10px 0px;
+    }
+    .question_cards a{
+        text-decoration: none;
+        color: #272727;
+    }
+    .question_cards .cards .btn{
+      font-size: 11px;
+      border-radius: 15px;
+    }
+    .question_cards .cards .icon i{
+      font-size: 30px;
+      color: #fff;
+      background-color: #C81631;
+      padding-top: 15px;
+        height: 60px;
+        width: 60px;
+      margin: 10px;
+      border-radius: 50%;
+    }
+    .question_cards .still_help p span{
+      color: #C81631;
+    }
+    .question_cards .still_help p{
+      font-size: 18px;
+      text-align: center;
+      margin: 20px 0px;
+      color: #272727;
+    }
+    .question_cards .cards p{
+        font-size: 14px;
+    }
+</style>
+<style>
+  .form-group{
+      padding: 5px !important;
+  }
+  #register .form{
+    padding: 50px 0px 20px 0px!important;
+  }
+  .form-group label{
+      margin-bottom: 10px !important;
+      font-size: 12px;
+      margin-top: 10px !important;
+  }
+.select2-selection{
+  height: 43px !important;
+  padding: 5px !important;
+}
+form .btn.btn-danger{
+  width: 18vw;
+  font-weight: 500;
+  height: 38px;
+  font-size: 12px;
+}
+form .form_parent{
+  background: #fff;
+  width: 90%;
+  margin: 0px auto;
+  padding: 20px;
+  margin-bottom: 50px;
+  border-radius: 15px;
+  text-align: left;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+  top: 5px;
+}
+.modal{
+  margin-top: 70px;
+}
+/* span.select2-container {
+    z-index:10050;
+} */
+@media (max-width:992px){
+  #register .form button {
+    padding: 0.625rem 0em;
+  }
+  .form .form_parent{
+    width: 90% !important;
+  }
+  .modal-dialog{
+    max-width: 90%;
+  }
+}
+@media (max-width:765px){
+
+form .form_parent{
+  width: 95vw !important;
+}
+.modal{
+  margin-top: 85px;
+}
+.modal-dialog{
+    max-width: 100%;
+  }
+form .btn.btn-danger{
+  width: 100%;
+  height: 38px;
+}
+.card_section_still {
+  padding: 10px;
+}
+
+}
+  </style>
+<body>
+<section id="register">
+  <!-- header  -->
+  <div class="smallhead">
+  <div class="alert alert-danger" role="alert">
+    <div class="buttons">
+      <a href="#"><button type="button" class="btn btn-danger">Community Login</button></a>
+      <a href="../register/index.html"><button type="button" class="btn btn-danger">Register</button></a>
+       <a href="#"><button type="button" class="btn btn-danger">Contact</button></a>
+     </div>
+     </div>
+  </div>
+  <!-- header  -->
+  <!-- navbar -->
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html"><img src="../asset/images/logo.png" class="img-fluid" width="70" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 my-auto mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../community/index.html">Community</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../events/index.html">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Job</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../travel/index.html">Travel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../business/index.html">Business</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../education/index.html">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../forums/index.html">Forums</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Universities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Bulletin</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- navbar -->
+
+
+
+
+
+<div class="question_cards">
+    <div class="text-center mb-5">
+        <h4>Select Your Question Category</h4>
+    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <!-- <a href=""> -->
+            <div class="cards">
+                <div class="icon"><i class="fal fa-bus"></i></div>
+                <p>Travels & Tours</p>
+                <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Select Question</button>
+
+                  <!-- Modal -->
+   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Question & Answer</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"> 
+          <form class="form" action="" method="POST">
+          <div class="form_parent">
+          <div class="container">
+          <div class="row">
+              <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                  <label>Name</label>
+                  <input type="text" class="form-control shadow-none" name="name">
+              </div>
+              <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                  <label>Email</label>
+                  <input type="text" class="form-control shadow-none" name="email">
+              </div>
+                <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                        <label>Question Catagory</label><br>
+                        <select class="form-control" name="state">
+                            <option value="AL" selected>Travels & Tours</option>
+                          </select>
+                    </div>
+              <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                  <label>Write a Question</label>
+                  <textarea name="message"  cols="20" rows="5" class="form-control shadow-none"></textarea>
+              </div>
+          </div></div>
+          <div class="text-center my-4">
+          <button type="submit" class="btn btn-danger" name="Submit"><i class="fal fa-paper-plane me-2"></i> Submit Query!</button>
+      </div>
+          </div>
+      </form>
+        </div>
+      </div>
+    </div>
+  </div> 
+            </div>
+        <!-- </a> -->
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <!-- <a href=""> -->
+          <div class="cards">
+              <div class="icon"><i class="fal fa-graduation-cap"></i></div>
+              <p>Education</p>
+              <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Select Question</button>
+
+              <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel2">Question & Answer</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body"> 
+                      <form class="form" action="" method="POST">
+                      <div class="form_parent">
+                      <div class="container">
+                      <div class="row">
+                          <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                              <label>Name</label>
+                              <input type="text" class="form-control shadow-none" name="name">
+                          </div>
+                          <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                              <label>Email</label>
+                              <input type="text" class="form-control shadow-none" name="email">
+                          </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                                    <label>Question Catagory</label><br>
+                                    <select class="form-control" name="state">
+                                        <option value="AL" selected>Education</option>
+                                      </select>
+                                </div>
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                              <label>Write a Question</label>
+                              <textarea name="message"  cols="20" rows="5" class="form-control shadow-none"></textarea>
+                          </div>
+                      </div></div>
+                      <div class="text-center my-4">
+                      <button type="submit" class="btn btn-danger" name="Submit"><i class="fal fa-paper-plane me-2"></i> Submit Query!</button>
+                  </div>
+                      </div>
+                  </form>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+          </div>
+      <!-- </a> -->
+      </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <!-- <a href=""> -->
+          <div class="cards">
+              <div class="icon"><i class="fal fa-money-check"></i></div>
+              <p>Payments</p>
+              <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Select Question</button>
+
+              <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel1">Question & Answer</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body"> 
+                      <form class="form" action="" method="POST">
+                      <div class="form_parent">
+                      <div class="container">
+                      <div class="row">
+                          <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                              <label>Name</label>
+                              <input type="text" class="form-control shadow-none" name="name">
+                          </div>
+                          <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                              <label>Email</label>
+                              <input type="text" class="form-control shadow-none" name="email">
+                          </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                                    <label>Question Catagory</label><br>
+                                    <select class="form-control" name="state">
+                                        <option value="AL" selected>Payments</option>
+                                      </select>
+                                </div>
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                              <label>Write a Question</label>
+                              <textarea name="message"  cols="20" rows="5" class="form-control shadow-none"></textarea>
+                          </div>
+                      </div></div>
+                      <div class="text-center my-4">
+                      <button type="submit" class="btn btn-danger" name="Submit"><i class="fal fa-paper-plane me-2"></i> Submit Query!</button>
+                  </div>
+                      </div>
+                  </form>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+          </div>
+      <!-- </a> -->
+      </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <!-- <a href=""> -->
+          <div class="cards">
+              <div class="icon"><i class="fal fa-question-circle"></i></div>
+              <p>How to Apply</p>
+              <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">Select Question</button>
+
+              <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel3">Question & Answer</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body"> 
+                      <form class="form" action="" method="POST">
+                      <div class="form_parent">
+                      <div class="container">
+                      <div class="row">
+                          <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                              <label>Name</label>
+                              <input type="text" class="form-control shadow-none" name="name">
+                          </div>
+                          <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                              <label>Email</label>
+                              <input type="text" class="form-control shadow-none" name="email">
+                          </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                                    <label>Question Catagory</label><br>
+                                    <select class="form-control" name="state">
+                                        <option value="AL" selected>How to Apply</option>
+                                      </select>
+                                </div>
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                              <label>Write a Question</label>
+                              <textarea name="message"  cols="20" rows="5" class="form-control shadow-none"></textarea>
+                          </div>
+                      </div></div>
+                      <div class="text-center my-4">
+                      <button type="submit" class="btn btn-danger" name="Submit"><i class="fal fa-paper-plane me-2"></i> Submit Query!</button>
+                  </div>
+                      </div>
+                  </form>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+          </div>
+      <!-- </a> -->
+      </div>
+        </div>
+    </div>
+
+    <div class="contact_main">
+      <div class="still_help">
+        <p>Other <span>Query?</span></p>
+      </div>
+      <div class="card_section_still col-lg-3 col-md-4 col-sm-12 m-auto">
+      <div class="cards d-flex">
+        <div class="icon"><i class="fal fa-file-signature"></i></div>
+        <div class="card_body">
+          <p>Asked a Question</p>
+          <p>Click here for further assistance</p>
+  <button type="button" id="help_btn" class="btn btn-outline-danger">
+    Need More Help?
+  </button>
+  
+
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+<form class="form query_form" action="" method="POST">
+  <div class="form_parent">
+  <div class="container">
+  <div class="row">
+      <div class="form-group col-lg-4 col-md-4 col-sm-12">
+          <label>Name</label>
+          <input type="text" class="form-control shadow-none" name="name">
+      </div>
+      <div class="form-group col-lg-4 col-md-4 col-sm-12">
+          <label>Email</label>
+          <input type="text" class="form-control shadow-none" name="email">
+      </div>
+        <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                <label>Question Catagory</label><br>
+                <select class="js-example-basic-single form-control" id="select2insidemodal" name="state">
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                  </select>
+            </div>
+      <div class="form-group col-lg-12 col-md-12 col-sm-12">
+          <label>Write a Question</label>
+          <textarea name="message"  cols="20" rows="5" class="form-control shadow-none"></textarea>
+      </div>
+  </div></div>
+  <div class="text-center my-4">
+  <button type="submit" class="btn btn-danger" name="Submit"><i class="fal fa-paper-plane me-2"></i> Submit Query!</button>
+</div>
+  </div>
+</form>
+
+  <!-- footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="socialmediaicon">
+            <h1>Social Media</h1>
+            <a href="#"><i class="fab fa-twitter me-2"></i>Twitter</a>
+            <a href="#"><i class="fab fa-youtube me-2"></i>Youtube</a>
+            <a href="#"><i class="fab fa-facebook-f me-2"></i>Facebook</a>
+            <a href="#"><i class="fab fa-linkedin-in me-2"></i>Linkedin</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="socialmediaicon">
+            <h1>Get Help</h1>
+            <a href="#">CONTACT THE ALUMNI SERVICE DESK</a>
+            <a href="#">CLAIM YOUR PAPKEY</a>
+            <a href="#">GET HELP SEARCHING THE ALUMNI DIRECTORY</a>
+            <a href="#">VIEW ALL CONTACTS</a>
+            <a href="#">VIEW ALL HELP PAGES</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="socialmediaicon">
+            <h1>About This Site</h1>
+            <a href="#">ACCESSIBILITY</a>
+            <a href="#">PRIVACY</a>
+            <a href="#">TERMS OF USE</a>
+            <a href="#">FEEDBACK</a>
+            <a href="#">GO TO PAP.EDU</a>
+            <a href="#">ADMIN PROFILE</a>
+          </div>
+        </div>
+
+        <div class="copyright text-center">
+          <p> © 2021 The President and Fellows of PAP</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+</script>
+<script>
+$(document).ready(function() {
+  $('.query_form').hide();
+  $('#help_btn').click(function(){
+  $('.query_form').slideToggle().show();
+    });
+});
+</script>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      var header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0)
+    })
+  </script>
+</body>
+
+</html>

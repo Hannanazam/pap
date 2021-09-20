@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to PAP Alumni</title>
+    <link rel="stylesheet" href="../asset/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<style>
+    .form-group{
+        padding: 5px !important;
+    }
+    .form-group label{
+        margin-bottom: 10px !important;
+        font-size: 12px;
+        margin-top: 10px !important;
+    }
+    .backgroundset h1{
+        padding: 0px !important
+    }
+    .backgroundset{
+        color: #fff !important;
+        background-color: #212529 !important;
+        padding: 50px 0px !important;
+        margin-bottom: 50px !important
+    }
+    .intl-tel-input{
+        width: 100% !important;
+    }
+
+.select2-selection{
+    height: 38px !important;
+    padding: 5px !important;
+}
+form .btn.btn-danger{
+    width: 18vw;
+    font-weight: 500;
+    height: 38px;
+    font-size: 12px;
+}
+form .form_parent{
+    background: #f3f3f3;
+    width: 60vw;
+    margin: 0px auto;
+    padding: 20px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+}
+
+.intl-tel-input.separate-dial-code.allow-dropdown.iti-sdc-2 input{
+    height: 38px;
+    font-size: 12px;
+}
+.intl-tel-input.separate-dial-code.allow-dropdown.iti-sdc-2 input[type=tel]{
+    padding-left: 55px;
+}
+
+.intl-tel-input.separate-dial-code.allow-dropdown.iti-sdc-2 .selected-flag{
+    width: 50px;
+}
+@media (max-width:765px){
+
+form .form_parent{
+    width: 95vw;
+}
+form .btn.btn-danger{
+    width: 81vw;
+    height: 38px;
+}
+}
+    </style>
+<body>
+    <section id="home">
+        <div class="container-fluid herosection">
+    
+            <div class="row">
+                <div class="backgroundset">
+                    <div class="container">
+                <h1>Q & A</h1>
+            </div>
+                </div>
+            </div>
+    
+            <form class="form" action="" method="POST">
+                <div class="form_parent">
+                <div class="container">
+                <div class="row">
+                    <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                        <label>Name</label>
+                        <input type="text" class="form-control shadow-none" name="name">
+                    </div>
+                    <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                        <label>Email</label>
+                        <input type="text" class="form-control shadow-none" name="email">
+                    </div>
+                    <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                        <label>Question Catagory</label>
+                        <select class="js-example-basic-single form-control" name="state">
+                            <option value="AL">Alabama</option>
+                            <option value="WY">Wyoming</option>
+                          </select>
+                    </div>
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                        <label>Write a Question</label>
+                        <textarea name="message"  cols="20" rows="5" class="form-control shadow-none"></textarea>
+                    </div>
+                </div></div>
+                <div class="text-center my-4">
+                <button type="submit" class="btn btn-danger" name="Submit"><i class="fal fa-paper-plane me-2"></i> Submit Query!</button>
+            </div>
+                </div>
+            </form>
+    
+        </div>
+    
+    </section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+</script>
+</body>
+</html>

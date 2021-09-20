@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to PAP Alumni</title>
+    <link rel="stylesheet" href="../asset/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous" />
+
+</head>
+<style>
+    .upcoming_events .card_set{
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 2px;
+            /* box-shadow: 0 0 15px 5px rgba(219, 219, 219, 0.2); */
+            width: 90%;
+            border: 1px solid #dedede;
+    }
+    .upcoming_events .card_inner a{
+        text-decoration: none;
+    }
+    .upcoming_events .card_inner a:hover{
+        text-decoration: underline;
+    }
+    .upcoming_events .card_inner .card-title a{
+        color: #001429;
+        font-size: 25px;
+        font-weight: 550;
+        margin-bottom: 5px;
+    }
+    /* .upcoming_events .card_inner .card-text i.fa-map-marker-alt{
+        color: #29b9f8;
+    }
+    .upcoming_events .card_inner .card-text i.fa-building{
+        color: #0dcaf0;
+    }
+    .upcoming_events .card_inner .card-text i.fa-user-graduate{
+        color: #ffc107;
+    }
+    .upcoming_events .card_inner .card-text i.fa-industry-alt{
+        color: #dc3534;
+    }
+    .upcoming_events .card_inner .card-text i.fa-calendar-alt{
+        color: #52d9d4;
+    } */
+    .upcoming_events .card_inner .card-text i{
+        margin-right: 5px;
+        font-size: 15px;
+    }
+    .upcoming_events .card_inner .card-text{
+        font-size: 13px;
+        /* color: #68717b; */
+    }
+    .upcoming_events .card_inner .card_text_job{
+        /* color: #68717b; */
+        font-size: 12px;
+    }
+    .upcoming_events .card_inner .btn{
+        font-size: 13px;
+        border-radius: 15px;
+        margin: 0px 10px 0px 0px;
+    }
+    .upcoming_events .card_inner .btn-danger:hover{
+        background-color: #198754;
+        border-color: #198754;
+    }
+    .upcoming_events .card_inner .img{
+        margin: auto 20px auto 0px;
+    }
+    .upcoming_events .card_inner .Job_description{
+        font-size: 14px;
+        color: #001429;
+    }
+    .upcoming_events .upcoming .fa-chevron-down{
+        float: right;
+    }
+    .upcoming_events .upcoming .input .form-check{
+        padding-left:35px;
+    }
+   
+    .upcoming_events .upcoming .input .form-check label{
+        font-size: 13px !important;
+        font-weight: normal !important;
+    }
+    #event .communityoverview .upcoming .input select, #event .communityoverview .upcoming .input input{
+        border-radius: 0px !important;
+        box-shadow: none;
+    }
+    #event .communityoverview .upcoming .input select, #event .communityoverview .upcoming .input label{
+        font-size: 13px !important;
+        font-weight: normal !important;
+    }
+    .upcoming_events .upcoming .input{
+        background-color: #fff;
+        width: 90%;
+        padding: 10px;
+        border: 1px solid #dedede;
+    }
+    #event .communityoverview .upcoming_events .upcoming .input button{
+        width: 250px;
+        text-align: left;
+    }
+    #event .communityoverview .upcoming_events .upcoming .input,
+    #event .communityoverview .upcoming_events .upcoming .input button{
+        margin-top: 0px !important;
+    }
+    .down{
+        transform: rotate(180deg);
+    }
+    .dropdown-menu-filters{
+        display: none;
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    border: 1px solid #dedede;
+    top: 44px;    
+    padding: 10px;
+    left: -11px;
+    }
+    .display-block{
+        display: block;
+    }
+   .dropdown{
+    border: 1px solid #dedede;
+    border-radius: 15px;
+    background: #f4f4f4;
+   }
+   @media (max-width:1150px) {
+    #event .communityoverview .upcoming_events .upcoming .input button{
+        width: 150px !important;
+    }
+   }
+   @media (max-width:765px) {
+    .upcoming_events .upcoming .d-flex{
+        display: block !important;
+    }
+    #event .communityoverview .upcoming_events .upcoming .dropdown{
+        margin-top: 10px !important;
+    }
+    #event .communityoverview .upcoming_events .upcoming .input button{
+        width: 100% !important;
+    }
+    .upcoming_events .upcoming .input,
+    .upcoming_events .card_set{
+        width: 100%;
+    }
+    .industry{
+        z-index: 2 !important;
+    }
+    .location{
+        z-index: 1 !important;
+    }
+    .dropdown-menu-filters{
+        width: 107%;
+    }
+    .upcoming_events .card_inner .card_text_job{
+        margin-left: 0px !important;
+    }
+    .upcoming_events .card_inner .Job_description{
+        margin-top: 10px;
+    }
+   }
+</style>
+<body>
+
+    <section id="event">
+    <!-- header  -->
+    <div class="smallhead">
+    <div class="alert alert-danger" role="alert">
+        <div class="buttons">
+            <a href="#"><button type="button" class="btn btn-danger">Community Login</button></a>
+            <a href="../register/index.html"><button type="button" class="btn btn-danger">Register</button></a>
+             <a href="#"><button type="button" class="btn btn-danger">Contact</button></a>
+           </div>
+           </div>
+    </div>
+    <!-- header  -->
+    <!-- navbar -->
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html"><img src="../asset/images/logo.png" class="img-fluid" width="70"
+                        alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 my-auto mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../community/index.html">Community</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Job</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../travel/index.html">Travel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../business/index.html">Business</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../education/index.html">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../forums/index.html">Forums</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Universities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Bulletin</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- navbar -->
+
+    <!-- herosection  -->
+
+
+    <!-- herosection  -->
+
+    <!-- communityoverview -->
+    <div class="communityoverview">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12">
+
+                    <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
+                        <div class="container-fluid leftcontainermain">
+                            <a class="navbar-brand d-md-none" href="#">Menu</a>
+                            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="text-white pe-3 fal fa-plus"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+                                <ul class="d-grip leftrefrence">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">Community Overview</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">My Profile</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">PAP Member-Registration</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Networking</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Message Founder</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Stories</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Find a friend</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div class="upcoming_events">
+                    <div class="upcoming">
+                        <div class="d-flex justify-content-between input">
+                            <div class="dropdown">
+                                <button class="btn filters">
+                                  Industry <i class="far fa-chevron-down me-2 rotate"></i>
+                                </button>
+                                <div class="dropdown-menu-filters industry">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                          checkbox
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                        <label class="form-check-label" for="defaultCheck2">
+                                          checkbox
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                                        <label class="form-check-label" for="defaultCheck3">
+                                          checkbox
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                                        <label class="form-check-label" for="defaultCheck4">
+                                          checkbox
+                                        </label>
+                                      </div>
+                                </div>
+                              </div>
+                                
+                              <div class="dropdown">
+                                <button class="btn filters">
+                                  Location <i class="far fa-chevron-down me-2 rotate"></i>
+                                </button>
+                                <div class="dropdown-menu-filters location">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+                                        <label class="form-check-label" for="defaultCheck5">
+                                          checkbox
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
+                                        <label class="form-check-label" for="defaultCheck6">
+                                          checkbox
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
+                                        <label class="form-check-label" for="defaultCheck7">
+                                          checkbox
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck8">
+                                        <label class="form-check-label" for="defaultCheck8">
+                                          checkbox
+                                        </label>
+                                      </div>
+                                </div>
+                              </div>
+
+                              <div class="dropdown">
+                                <button class="btn filters">
+                                  Position <i class="far fa-chevron-down me-2 rotate"></i>
+                                </button>
+                                <div class="dropdown-menu-filters position">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+                                        <label class="form-check-label" for="defaultCheck9">
+                                          checkbox
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck10">
+                                        <label class="form-check-label" for="defaultCheck10">
+                                          checkbox
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck11">
+                                        <label class="form-check-label" for="defaultCheck11">
+                                          checkbox
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck12">
+                                        <label class="form-check-label" for="defaultCheck12">
+                                          checkbox
+                                        </label>
+                                      </div>
+                                </div>
+                              </div>
+                           
+                        </div>
+                     
+                        <div class="card_set mb-3">
+                            <div class="card_inner">
+                                
+                                <div class="">
+                                    <div class="location_date">
+                                <h5 class="card-title mt-2"><a href="#"> Memorial Day 2021</a></h5>
+                                    <div class="d-flex">
+                                        <p class="card-text"><i class="far fa-map-marker-alt"></i> ABC-Street</p>
+                                    <p class="card-text card_text_job ms-5"><i class="fal fa-calendar-alt"></i><small>Apply Before : </small> Aug 21, 2021</p>
+                                    <p class="card-text card_text_job ms-5"><i class="fal fa-building"></i>Company</p>
+                                    <p class="card-text card_text_job ms-5"><i class="far fa-industry-alt"></i>Industry</p>
+                                    <p class="card-text card_text_job ms-5"><i class="fal fa-user-graduate"></i>Position</p>
+                                      
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="Job_description">
+                                   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, et consequuntur! Minus beatae quam molestias, veritatis odit praesentium necessitatibus voluptas, voluptate ex illum, enim eos quaerat natus ducimus doloremque ad!.</p>
+                                </div>
+                                   
+                               
+                                <div class="">
+                                    <button type="button" class="btn btn-outline-success">View more</button>
+                                    <button type="button" class="btn btn-danger">Apply Now</button>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- eventinformation -->
+
+        <!-- <div class="eventinformation">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h1>Event Information</h1>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <p>This page features events sponsored by PAP University, the PAP Alumni Association (PAP), PAP
+                        Clubs, and PAP Shared Interest Groups (SIGs). PAP Clubs and PAP SIGs are alumni-governed and
+                        independently financed.</p>
+                    <p>In order to slow the potential transmission of the virus and protect vulnerable populations from
+                        exposure, the PAP is currently only hosting virtual events. PAP urges all members of the PAP
+                        community to follow CDC and local health department guidance regarding in-person gatherings.</p>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- eventinformation -->
+    </div>
+    </div>
+    <!-- communityoverview -->
+
+
+
+
+
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="socialmediaicon">
+                        <h1>Social Media</h1>
+                        <a href="#"><i class="fab fa-twitter me-2"></i>Twitter</a>
+                        <a href="#"><i class="fab fa-youtube me-2"></i>Youtube</a>
+                        <a href="#"><i class="fab fa-facebook-f me-2"></i>Facebook</a>
+                        <a href="#"><i class="fab fa-linkedin-in me-2"></i>Linkedin</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="socialmediaicon">
+                        <h1>Get Help</h1>
+                        <a href="#">CONTACT THE ALUMNI SERVICE DESK</a>
+                        <a href="#">CLAIM YOUR PAPKEY</a>
+                        <a href="#">GET HELP SEARCHING THE ALUMNI DIRECTORY</a>
+                        <a href="#">VIEW ALL CONTACTS</a>
+                        <a href="#">VIEW ALL HELP PAGES</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="socialmediaicon">
+                        <h1>About This Site</h1>
+                        <a href="#">ACCESSIBILITY</a>
+                        <a href="#">PRIVACY</a>
+                        <a href="#">TERMS OF USE</a>
+                        <a href="#">FEEDBACK</a>
+                        <a href="#">GO TO PAP.EDU</a>
+                        <a href="#">ADMIN PROFILE</a>
+                    </div>
+                </div>
+
+                <div class="copyright text-center">
+                    <p> © 2021 The President and Fellows of PAP</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
